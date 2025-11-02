@@ -1,94 +1,74 @@
-/* style.css
-   Bold, clean, modern aesthetic
-   - Sterke typografie: bold basis en extra bold headings
-   - Verbeterde kaart- en knopstijl
-   - Blue palette gebruikt via CSS-variabelen
-*/
-
-@import url('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&display=swap');
-
-/* Use Inter font for everything */
-body, h1, h2, h3, h4, h5, h6, .widget-title {
-  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+*{
+  font-family: 'Inter', sans-serif;
 }
 
-/* Bubble widget card utility */
-.widget-card {
-  @apply flex flex-col bg-white rounded-[2.5rem] shadow-2xl border-2 border-purple-200 overflow-hidden transition transform hover:-translate-y-2 hover:scale-105 duration-300;
-  box-shadow: 0 8px 32px 0 rgba(128, 90, 213, 0.12), 0 1.5px 6px 0 rgba(236, 72, 153, 0.08);
+.recipe-detail-body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	min-height: 100vh;
+	padding: 20px;
+	background: #f3f4f6;
+	box-sizing: border-box;
 }
 
-/* Widget image container */
-.widget-img {
-  @apply h-52 w-full bg-gray-100 flex items-center justify-center overflow-hidden relative rounded-t-[2.5rem];
+.recipe-title {
+	font-size: 22px;
+	margin: 8px 0;
 }
 
-/* Widget badge */
-.widget-badge {
-  @apply absolute top-4 right-4 px-4 py-2 rounded-full text-xs font-extrabold text-white shadow-lg tracking-wide;
-  letter-spacing: 0.05em;
-}
-.widget-badge-easy { @apply bg-green-500; }
-.widget-badge-medium { @apply bg-yellow-500 text-gray-900; }
-.widget-badge-hard { @apply bg-red-600; }
-
-/* Widget info section */
-.widget-info {
-  @apply p-7 flex flex-col flex-1 rounded-b-[2.5rem] bg-gradient-to-b from-white via-purple-50 to-pink-50;
+.recipe-image {
+	width: 100%;
+	max-width: 320px;
+	height: auto;
+	object-fit: cover;
+	border-radius: 6px;
+	display: block;
+	margin: 8px 0;
 }
 
-/* Widget meta badges */
-.widget-meta {
-  @apply flex items-center gap-2 flex-wrap mb-3;
-}
-.widget-category {
-  @apply px-3 py-1 rounded-full text-xs font-bold bg-purple-100 text-purple-700 shadow;
-}
-.widget-veg {
-  @apply px-3 py-1 rounded-full text-xs font-bold bg-green-100 text-green-700 shadow;
+.recipe-category {
+	font-size: 14px;
+	color: #444;
+	margin: 6px 0;
 }
 
-/* Widget title */
-.widget-title {
-  @apply mb-3 text-2xl font-extrabold text-gray-900 leading-tight tracking-tight;
-  letter-spacing: -0.01em;
+.recipe-info-title {
+	font-size: 18px;
+	margin-top: 12px;
 }
 
-/* Widget stats */
-.widget-stats {
-  @apply flex items-center text-sm text-gray-600 mb-5 gap-5 font-semibold;
-}
-.widget-stat {
-  @apply flex items-center gap-2;
-}
-
-/* Widget button */
-.widget-btn {
-  @apply block w-full text-center py-3 px-5 bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 text-white font-extrabold rounded-full transition mt-auto shadow-lg tracking-wide;
-  letter-spacing: 0.05em;
+.recipe-info-list {
+	list-style: none;
+	padding: 0;
+	margin: 8px 0;
+	max-width: 640px;
+	width: 100%;
 }
 
-/* Fade-in animation */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(16px);}
-  to { opacity: 1; transform: translateY(0);}
-}
-.fade-in { animation: fadeIn .7s cubic-bezier(.2,.9,.2,1) both; }
-
-/* Responsive grid gap */
-@media (max-width: 640px) {
-  .widget-card { @apply shadow-md rounded-[1.5rem]; }
-  .widget-info { @apply p-4 rounded-b-[1.5rem]; }
-  .widget-img { @apply h-36 rounded-t-[1.5rem]; }
+.recipe-card {
+	background: #ffffff;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+	max-width: 520px;
+	width: 100%;
+	box-sizing: border-box;
 }
 
-/* Background blur layer */
-.background {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
-  opacity: 0.08;
-  pointer-events: none;
+.back-button {
+	display: inline-block;
+	margin-bottom: 8px;
+	color: #333;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.recipe-info-item {
+	font-size: 14px;
+	color: #333;
+	margin: 6px 0;
+	padding: 4px 0;
+	text-align: left;
 }
