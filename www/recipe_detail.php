@@ -25,7 +25,7 @@ $recept = mysqli_fetch_assoc($result);
         <a class="back-button" href="index.php">Terug</a>
         <h1 class="recipe-title"><?php echo ($recept['name']); ?></h1>
 
-        <img class="recipe-image" src="images/<?php echo ($recept['image']); ?>" alt="<?php echo ($recept['name']); ?>">
+        <img class="recipe-image" src="images/<?php echo ($recept['image']); ?>">
 
         <h2 class="recipe-category">Type: <?php echo ($recept['category']); ?></h2>
 
