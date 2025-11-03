@@ -1,10 +1,10 @@
 <?php
 $recept_id = $_GET['id'];
 
-//connect to the database
+
 include 'database_connection.php';
 
-// Use mysqli_query instead of prepared statement
+
 $query = "SELECT * FROM recipes WHERE id = $recept_id";
 $result = mysqli_query($conn, $query);
 $recept = mysqli_fetch_assoc($result);
